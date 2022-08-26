@@ -8,4 +8,94 @@ wait(3)
 print("Checking map | Checking system | Checking lag | Anti afk")
 print("Vookit | Checking key | Loading | Take a few seconds..")
 
+-- Whitelist system! [ Key ] Else wrong= k
+_G.Key = ""
 
+local keys = {
+    "0zAP5-Zn4sO-Ns8J2-tW4P4",
+    "40Ev8-FeoOC-mrTIZ-GC5zt",
+    "dtamD-IJ6Ya-hlH95-3sfI7"
+    "3NWda-CrRkQ-ScB48-YjRB7",
+    "YTfou-Vr5x2-116gJ-8e0E4",
+    "x9g1H-eNpBR-XgxpP-NwF2T",
+    "BeHTO-bSZQj-xEQRC-0cC1Y",
+    "L76LB-cxdI9-XVDPv-2x31Z",
+    "bI9aG-ZVgZC-499Iz-odLya",
+    "yMc0z-Kkiau-a9TPQ-Gm7x5",
+    "0HdSU-07J6H-1oVBw-smGoy",
+    "IsDMo-TpzoF-fLDqa-MPsPA",
+    "ZEGaG-F3bF1-NM1Gg-RcExX",
+    "v0Pf8-3uLH7-bH9oO-5hzFA",
+    "MBV4c-oU2Kz-GRIGs-yYJTV",
+    "kvovJ-rdfkc-1TDJX-vFMar",
+    "MxVnB-qgUrG-qreyf-LJtbU",
+    "mQSDp-Jm297-dl2TU-5C35a",
+    "CCP17-v4skw-9gX9f-KuaUc",
+    "emx68-p9COD-h0ajP-OwPQ4",
+    "m1GR8-Q1yWU-y9m6v-vubW2",
+    "BnB3C-7vCsb-SF0M2-tBhlM",
+    "HrzFs-0c19D-WgH8f-0n2VA",
+    "lffQ8-5LtHG-TLeiD-8RoUm",
+    "fT6Hn-b0uCj-CqY0m-Yy82q",
+    "INnTR-hOHot-PlmQa-OIAQ9",
+    "rVWVx-5U7Gr-D26oO-u3OIm",
+    "iySba-gOvWF-xeVfB-VDmHZ",
+    "EgfNc-w8Vgv-q2Nwx-M3XVZ",
+    "OwMWy-S2TzB-dB9Sa-wj4vZ",
+    "70A1Y-259m4-S586c-6O5IM",
+    "VuTEG-UuFfa-LdzZO-Utc4u",
+    "dXOB4-wo5wq-kx1iT-y3AvY",
+    "njtzj-1REHw-0k6hh-bHIdA",
+    "MIF9R-EXp9l-O8Il6-ge9tp",
+    "GDquy-SqTCU-YqAdf-nVF3u",
+    "5S8Qs-GIhrC-YTuj4-hrAlF",
+    "cvwKC-augbd-FHr8O-hJhh0",
+    "2W7cY-EVQvD-kt6qk-xNL4Z",
+    "3z5bi-VKHV5-7zEhq-QcZwl",
+    "Pfmge-hbIMt-P9ZQw-ICBx4",
+    "2g5TM-vanRd-pKaP3-PM8nb",
+    "WTxwE-vLKJh-MYVCL-CcExN",
+    "zpMxw-6Mn4O-M2oni-epUCK",
+    "wPm6s-5vAVl-KGt0U-RPU85",
+    "Tbtrz-feYUS-r8WbZ-0OdFd",
+    "kpEea-5c3cn-mMYMC-UZgQM",
+    "Ucngc-ExjEu-m8igb-CAxVS",
+    "HIlIy-BjlQE-YR9WV-ISB5I",
+    "T8GuI-O7mtZ-Xs4UD-yKvZb",
+    "y7Dai-phGwB-9iUFR-4J3Rm",
+    "vF8gb-5Ygmd-AdYvC-8cvJk",
+    "apc4x-Y3GW9-eBjkB-WWdZZ",
+    "rIO5w-tZxaI-fX0Kg-2F9fg",
+    "AsfnI-d4mfA-T7E34-8945I",
+    "zmcoO-MuLwG-4UZZz-NxZdC",
+    "CaMcX-TvnVM-Vg1fp-pSGsl",
+    "4l0Ww-3OxjU-olUy6-VikVd",
+}
+
+local counter = 1
+local keyCheck
+for i,v in pairs(keys) do
+    if counter == #keys then
+    --not whitelisted!
+    keys = ""
+    game.Players.LocalPlayer:Kick("Error! Your key is invaild, error code : 16851")
+    else
+        if v == _G.Key then
+            --Whitelisted!
+            print("Successfully whitelisted!")
+            keyCheck = _G.Key
+            keys = ""
+        else
+            counter = counter +1
+        end
+    end
+end
+
+while true do
+    if _G.Key == keyCheck then
+        --Not spoofed
+    else
+        game.Players.LocalPlayer:Kick("Do not try and spoof your key! Error : 17721")
+    end
+    wait()
+end
